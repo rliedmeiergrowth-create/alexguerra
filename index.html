@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Alexander Guerra | Bankers Life Agent | Richmond, VA</title>
+  <meta name="description" content="Insurance and retirement solutions in Richmond, VA. Contact Alexander Guerra at Bankers Life to discuss life insurance, Medicare supplement, annuities, and more." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <!-- Top bar -->
+  <header class="nav" role="navigation" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Alexander Guerra Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Alexander Guerra</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Site">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary nav-cta" href="#contact">Request an appointment</a>
+
+      <button class="burger" aria-expanded="false" aria-controls="drawer" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="drawer" id="drawer">
+      <nav class="drawer-links" aria-label="Mobile">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Request an appointment</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="kicker">Bankers Life • Richmond, Virginia</p>
+      <h1>Insurance & retirement guidance for the life of your retirement.</h1>
+      <p class="lead">
+        Talk through options like life insurance, Medicare supplement coverage, annuities, long-term care,
+        and other retirement-focused solutions.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#contact">Request an appointment</a>
+        <a class="btn btn-outline" href="tel:+18042937009">Call direct: (804) 293-7009</a>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-item">
+          <div class="label">Direct</div>
+          <a href="tel:+18042937009">(804) 293-7009</a>
+        </div>
+        <div class="hero-card-item">
+          <div class="label">Office</div>
+          <a href="tel:+18048973256">(804) 897-3256</a>
+        </div>
+        <div class="hero-card-item">
+          <div class="label">Email</div>
+          <a href="mailto:alexander.guerra@bankerslife.com">alexander.guerra@bankerslife.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Services</p>
+        <h2>What I can help with</h2>
+        <p class="sub">Clear, straightforward conversations so you can choose what fits your needs.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Life insurance</h3>
+          <p>Coverage options designed to support loved ones and long-term plans.</p>
+        </article>
+
+        <article class="card">
+          <h3>Medicare Supplement</h3>
+          <p>Help understanding coverage choices and how plans can work alongside Medicare.</p>
+        </article>
+
+        <article class="card">
+          <h3>Long-term care</h3>
+          <p>Planning tools that can help prepare for future care needs.</p>
+        </article>
+
+        <article class="card">
+          <h3>Annuities</h3>
+          <p>Retirement income strategies for stability and confidence.</p>
+        </article>
+
+        <article class="card">
+          <h3>Supplemental health</h3>
+          <p>Extra protection options depending on your situation and budget.</p>
+        </article>
+
+        <article class="card">
+          <h3>Financial services</h3>
+          <p>Retirement-focused guidance aligned with your goals and timeline.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section alt">
+    <div class="container split">
+      <div>
+        <p class="kicker">About</p>
+        <h2>Meet Alexander</h2>
+        <p class="sub">
+          Alexander Guerra is a Bankers Life financial professional serving clients in Richmond, VA and is licensed in Virginia.
+        </p>
+
+        <ul class="list">
+          <li>Licensed in: <strong>VA</strong></li>
+          <li>Education: <strong>Virginia Military Institute</strong></li>
+          <li>Office hours: <strong>Mon–Fri, 9:00 AM–5:00 PM</strong></li>
+        </ul>
+      </div>
+
+      <div class="card big">
+        <h3>Branch office</h3>
+        <p class="muted">
+          10800 Midlothian Turnpike, Ste 134 & 140<br />
+          Richmond, VA 23235
+        </p>
+        <div class="buttons">
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://maps.google.com/?q=10800%20Midlothian%20Turnpike%20Richmond%20VA%2023235">
+            Get directions
+          </a>
+          <a class="btn btn-primary" href="#contact">Request an appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container contact">
+      <div class="section-head">
+        <p class="kicker">Contact</p>
+        <h2>Request an appointment</h2>
+        <p class="sub">
+          Share a little about what you’re looking for and the best times to connect.
+        </p>
+      </div>
+
+      <!-- Simple mailto form (no backend needed) -->
+      <form class="form" onsubmit="return openMail(event)">
+        <div class="row">
+          <label>
+            Full name
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label>
+            Phone
+            <input name="phone" inputmode="tel" autocomplete="tel" />
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            ZIP code
+            <input name="zip" inputmode="numeric" autocomplete="postal-code" />
+          </label>
+        </div>
+
+        <label>
+          What are you interested in?
+          <select name="interest" required>
+            <option value="" selected disabled>Select…</option>
+            <option>Life Insurance</option>
+            <option>Medicare Supplement Insurance</option>
+            <option>Long-Term Care Insurance</option>
+            <option>Annuity</option>
+            <option>Supplemental Health Insurance</option>
+            <option>Financial Services</option>
+          </select>
+        </label>
+
+        <label>
+          Message + preferred times
+          <textarea name="message" rows="5" placeholder="A quick note and the best times to reach you…"></textarea>
+        </label>
+
+        <div class="buttons">
+          <button class="btn btn-primary" type="submit">Email request</button>
+          <a class="btn btn-outline" href="tel:+18042937009">Call direct</a>
+        </div>
+
+        <p class="fine">
+          By contacting, you consent to being reached by phone or email regarding insurance solutions.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Alexander Guerra</p>
+      <p class="fine">
+        Bankers Life is the marketing brand of Bankers Life and Casualty Company.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function openMail(e){
+      e.preventDefault();
+      const f = e.target;
+
+      const subject = encodeURIComponent("Appointment request — Alexander Guerra");
+      const body = encodeURIComponent(
+`Name: ${f.name.value}
+Phone: ${f.phone.value}
+Email: ${f.email.value}
+ZIP: ${f.zip.value}
+Interest: ${f.interest.value}
+
+Message:
+${f.message.value}`
+      );
+
+      window.location.href = `mailto:alexander.guerra@bankerslife.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
+</body>
+</html>
