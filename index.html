@@ -1,258 +1,238 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+:root{
+  /* Bankers Life-inspired theme */
+  --bl-blue: #00205B;
+  --bl-green:#428321;
 
-  <title>Alexander Guerra | Bankers Life Agent | Richmond, VA</title>
-  <meta name="description" content="Insurance and retirement solutions in Richmond, VA. Contact Alexander Guerra at Bankers Life to discuss life insurance, Medicare supplement, annuities, and more." />
+  --bg: #ffffff;
+  --ink:#0b1220;
+  --muted:#52607a;
+  --line:#e7ebf2;
+  --card:#ffffff;
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  --container: min(1100px, 92vw);
+  --nav-h: 68px;
+  --radius: 16px;
+}
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; scroll-padding-top: calc(var(--nav-h) + 12px); }
+body{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  padding-top: var(--nav-h);
+}
+a{ color: inherit; text-decoration:none; }
+.container{ width: var(--container); margin:0 auto; }
+.section{ padding: 78px 0; }
+.alt{ background: linear-gradient(180deg, #f7f9fc, #fff); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 
-<body>
-  <a id="top"></a>
+.kicker{
+  color: var(--bl-green);
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  margin-bottom: .6rem;
+}
+h1,h2,h3{ letter-spacing: -0.015em; }
+h1{ font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.12; color: var(--bl-blue); }
+h2{ font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; color: var(--bl-blue); }
+h3{ font-size: 1.1rem; margin-bottom: .35rem; color: var(--bl-blue); }
 
-  <!-- Top bar -->
-  <header class="nav" role="navigation" aria-label="Primary">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Alexander Guerra Home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">Alexander Guerra</span>
-      </a>
+.lead{ color: var(--muted); max-width: 70ch; margin-top: .8rem; }
+.sub{ color: var(--muted); margin-top: .5rem; max-width: 70ch; }
+.muted{ color: var(--muted); }
+.fine{ color: var(--muted); font-size: .9rem; margin-top: 12px; }
 
-      <nav class="nav-links" aria-label="Site">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+.buttons{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top: 18px; }
 
-      <a class="btn btn-primary nav-cta" href="#contact">Request an appointment</a>
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: .85rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  border: 2px solid transparent;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn-primary{
+  background: var(--bl-blue);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0,32,91,.15);
+}
+.btn-primary:hover{ background: #001a4a; }
+.btn-outline{
+  border-color: rgba(0,32,91,.25);
+  color: var(--bl-blue);
+  background: #fff;
+}
+.btn-outline:hover{
+  border-color: rgba(0,32,91,.4);
+  box-shadow: 0 10px 24px rgba(0,32,91,.08);
+}
 
-      <button class="burger" aria-expanded="false" aria-controls="drawer" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+.link-strong{
+  color: var(--bl-blue);
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
 
-    <div class="drawer" id="drawer">
-      <nav class="drawer-links" aria-label="Mobile">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#contact">Request an appointment</a>
-      </nav>
-    </div>
-  </header>
+/* Nav */
+.nav{
+  position: fixed;
+  top:0; left:0; right:0;
+  height: var(--nav-h);
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 50;
+}
+.nav-inner{
+  height: var(--nav-h);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 1rem;
+}
+.brand{ display:flex; align-items:center; gap:.6rem; font-weight:900; color: var(--bl-blue); }
+.brand-mark{
+  width: 14px; height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--bl-blue), var(--bl-green));
+}
+.nav-links{ display:flex; gap: 1.1rem; align-items:center; }
+.nav-links a{ color: var(--muted); font-weight: 800; }
+.nav-links a:hover{ color: var(--bl-blue); }
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <p class="kicker">Bankers Life • Richmond, Virginia</p>
-      <h1>Insurance & retirement guidance for the life of your retirement.</h1>
-      <p class="lead">
-        Talk through options like life insurance, Medicare supplement coverage, annuities, long-term care,
-        and other retirement-focused solutions.
-      </p>
+.burger{
+  display:none;
+  width: 42px; height: 42px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 12px;
+}
+.burger span{
+  display:block;
+  width: 20px; height: 2px;
+  background: var(--bl-blue);
+  margin: 5px auto;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav.menu-open .burger span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav.menu-open .burger span:nth-child(2){ opacity: 0; }
+.nav.menu-open .burger span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
-      <div class="buttons">
-        <a class="btn btn-primary" href="#contact">Request an appointment</a>
-        <a class="btn btn-outline" href="tel:+18042937009">Call direct: (804) 293-7009</a>
-      </div>
+.drawer{
+  position:absolute;
+  top: var(--nav-h);
+  left:0; right:0;
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  transition: max-height .2s ease;
+}
+.nav.menu-open .drawer{ max-height: 70vh; overflow:auto; }
+.drawer-links{
+  padding: 16px 0 22px;
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+}
+.drawer-links a{ color: var(--bl-blue); font-weight: 900; }
 
-      <div class="hero-card">
-        <div class="hero-card-item">
-          <div class="label">Direct</div>
-          <a href="tel:+18042937009">(804) 293-7009</a>
-        </div>
-        <div class="hero-card-item">
-          <div class="label">Office</div>
-          <a href="tel:+18048973256">(804) 897-3256</a>
-        </div>
-        <div class="hero-card-item">
-          <div class="label">Email</div>
-          <a href="mailto:alexander.guerra@bankerslife.com">alexander.guerra@bankerslife.com</a>
-        </div>
-      </div>
-    </div>
-  </section>
+/* Hero */
+.hero{
+  background:
+    radial-gradient(900px 420px at 20% 20%, rgba(66,131,33,.14), transparent 60%),
+    radial-gradient(900px 420px at 80% 10%, rgba(0,32,91,.14), transparent 60%),
+    linear-gradient(180deg, #ffffff, #f7f9fc);
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner{ padding: 56px 0 46px; }
+.hero-card{
+  margin-top: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.9);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow:hidden;
+}
+.hero-card-item{
+  padding: 16px 16px 18px;
+  border-right: 1px solid var(--line);
+}
+.hero-card-item:last-child{ border-right: 0; }
+.label{ color: var(--muted); font-size: .82rem; font-weight: 800; margin-bottom: 6px; }
+.hero-card a{ color: var(--bl-blue); font-weight: 900; }
 
-  <!-- Services -->
-  <section id="services" class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Services</p>
-        <h2>What I can help with</h2>
-        <p class="sub">Clear, straightforward conversations so you can choose what fits your needs.</p>
-      </div>
+.section-head{ margin-bottom: 22px; }
 
-      <div class="grid">
-        <article class="card">
-          <h3>Life insurance</h3>
-          <p>Coverage options designed to support loved ones and long-term plans.</p>
-        </article>
+/* Cards grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.card{
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.card.big{ padding: 20px; }
 
-        <article class="card">
-          <h3>Medicare Supplement</h3>
-          <p>Help understanding coverage choices and how plans can work alongside Medicare.</p>
-        </article>
+.split{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 22px;
+  align-items:start;
+}
 
-        <article class="card">
-          <h3>Long-term care</h3>
-          <p>Planning tools that can help prepare for future care needs.</p>
-        </article>
+/* Contact quick grid */
+.contact{ max-width: 980px; }
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.contact-item{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+}
 
-        <article class="card">
-          <h3>Annuities</h3>
-          <p>Retirement income strategies for stability and confidence.</p>
-        </article>
+/* Footer */
+.footer{
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+.footer-inner{
+  padding: 22px 0;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap: 10px;
+}
 
-        <article class="card">
-          <h3>Supplemental health</h3>
-          <p>Extra protection options depending on your situation and budget.</p>
-        </article>
-
-        <article class="card">
-          <h3>Financial services</h3>
-          <p>Retirement-focused guidance aligned with your goals and timeline.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section alt">
-    <div class="container split">
-      <div>
-        <p class="kicker">About</p>
-        <h2>Meet Alexander</h2>
-        <p class="sub">
-          Alexander Guerra is a Bankers Life financial professional serving clients in Richmond, VA and is licensed in Virginia.
-        </p>
-
-        <ul class="list">
-          <li>Licensed in: <strong>VA</strong></li>
-          <li>Education: <strong>Virginia Military Institute</strong></li>
-          <li>Office hours: <strong>Mon–Fri, 9:00 AM–5:00 PM</strong></li>
-        </ul>
-      </div>
-
-      <div class="card big">
-        <h3>Branch office</h3>
-        <p class="muted">
-          10800 Midlothian Turnpike, Ste 134 & 140<br />
-          Richmond, VA 23235
-        </p>
-        <div class="buttons">
-          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://maps.google.com/?q=10800%20Midlothian%20Turnpike%20Richmond%20VA%2023235">
-            Get directions
-          </a>
-          <a class="btn btn-primary" href="#contact">Request an appointment</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container contact">
-      <div class="section-head">
-        <p class="kicker">Contact</p>
-        <h2>Request an appointment</h2>
-        <p class="sub">
-          Share a little about what you’re looking for and the best times to connect.
-        </p>
-      </div>
-
-      <!-- Simple mailto form (no backend needed) -->
-      <form class="form" onsubmit="return openMail(event)">
-        <div class="row">
-          <label>
-            Full name
-            <input name="name" autocomplete="name" required />
-          </label>
-          <label>
-            Phone
-            <input name="phone" inputmode="tel" autocomplete="tel" />
-          </label>
-        </div>
-
-        <div class="row">
-          <label>
-            Email
-            <input name="email" type="email" autocomplete="email" required />
-          </label>
-          <label>
-            ZIP code
-            <input name="zip" inputmode="numeric" autocomplete="postal-code" />
-          </label>
-        </div>
-
-        <label>
-          What are you interested in?
-          <select name="interest" required>
-            <option value="" selected disabled>Select…</option>
-            <option>Life Insurance</option>
-            <option>Medicare Supplement Insurance</option>
-            <option>Long-Term Care Insurance</option>
-            <option>Annuity</option>
-            <option>Supplemental Health Insurance</option>
-            <option>Financial Services</option>
-          </select>
-        </label>
-
-        <label>
-          Message + preferred times
-          <textarea name="message" rows="5" placeholder="A quick note and the best times to reach you…"></textarea>
-        </label>
-
-        <div class="buttons">
-          <button class="btn btn-primary" type="submit">Email request</button>
-          <a class="btn btn-outline" href="tel:+18042937009">Call direct</a>
-        </div>
-
-        <p class="fine">
-          By contacting, you consent to being reached by phone or email regarding insurance solutions.
-        </p>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Alexander Guerra</p>
-      <p class="fine">
-        Bankers Life is the marketing brand of Bankers Life and Casualty Company.
-      </p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function openMail(e){
-      e.preventDefault();
-      const f = e.target;
-
-      const subject = encodeURIComponent("Appointment request — Alexander Guerra");
-      const body = encodeURIComponent(
-`Name: ${f.name.value}
-Phone: ${f.phone.value}
-Email: ${f.email.value}
-ZIP: ${f.zip.value}
-Interest: ${f.interest.value}
-
-Message:
-${f.message.value}`
-      );
-
-      window.location.href = `mailto:alexander.guerra@bankerslife.com?subject=${subject}&body=${body}`;
-      return false;
-    }
-  </script>
-</body>
-</html>
+/* Responsive */
+@media (max-width: 980px){
+  .grid{ grid-template-columns: 1fr 1fr; }
+  .split{ grid-template-columns: 1fr; }
+  .hero-card{ grid-template-columns: 1fr; }
+  .hero-card-item{ border-right:0; border-bottom:1px solid var(--line); }
+  .hero-card-item:last-child{ border-bottom:0; }
+  .contact-grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 860px){
+  .nav-links, .nav-cta{ display:none; }
+  .burger{ display:inline-block; }
+  .grid{ grid-template-columns: 1fr; }
+}
