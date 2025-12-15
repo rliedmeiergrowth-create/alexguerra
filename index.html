@@ -20,12 +20,12 @@
 <!-- NAV -->
 <header class="nav" role="navigation" aria-label="Primary">
   <div class="container nav-inner">
-    <a class="brand" href="#top">
-      <span class="brand-mark"></span>
+    <a class="brand" href="#top" aria-label="Alexander Guerra Home">
+      <span class="brand-mark" aria-hidden="true"></span>
       <span>Alexander Guerra</span>
     </a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Site">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -40,14 +40,14 @@
       Request a consultation
     </a>
 
-    <button class="burger" aria-label="Toggle menu">
+    <button class="burger" aria-expanded="false" aria-controls="drawer" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <!-- Mobile drawer -->
   <div class="drawer" id="drawer">
-    <nav class="drawer-links">
+    <nav class="drawer-links" aria-label="Mobile">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -67,9 +67,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
-
-    <!-- Left -->
-    <div>
+    <div class="hero-text">
       <p class="kicker">Bankers Life • Richmond, Virginia</p>
       <h1>Comprehensive Retirement Planning</h1>
 
@@ -92,7 +90,7 @@
         </a>
       </div>
 
-      <div class="hero-contact">
+      <div class="hero-contact" aria-label="Quick contact">
         <div class="hero-contact-item">
           <div class="label">Direct</div>
           <a href="tel:+18042937009">(804) 293-7009</a>
@@ -108,7 +106,6 @@
       </div>
     </div>
 
-    <!-- Right -->
     <div class="hero-photo-wrap">
       <img
         src="./assets/alex.jpg"
@@ -118,37 +115,38 @@
         height="292"
       />
     </div>
-
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
   <div class="container">
-    <p class="kicker">Services</p>
-    <h2>What I can help with</h2>
-    <p class="sub">These are the areas that most directly impact retirees financially and emotionally.</p>
+    <div class="section-head">
+      <p class="kicker">Services</p>
+      <h2>What I can help with</h2>
+      <p class="sub">These are the areas that most directly impact retirees financially and emotionally.</p>
+    </div>
 
     <div class="grid grid-4">
-      <div class="card">
+      <article class="card">
         <h3>Healthcare &amp; Medicare Planning</h3>
         <p>Understanding healthcare and Medicare in retirement helps reduce confusion and avoid unexpected medical costs.</p>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <h3>Financial Planning for Retirement</h3>
         <p>Retirement planning aligns income, assets, and risk to support long-term financial stability.</p>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <h3>Extended Care &amp; Post-Hospital Planning</h3>
         <p>Planning for extended and long-term care needs helps protect retirement savings and reduce the burden on family.</p>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <h3>Legacy &amp; Final Expense Planning</h3>
         <p>Legacy and final expense planning ensures clarity for your wishes and peace of mind for your loved ones.</p>
-      </div>
+      </article>
     </div>
 
     <div class="buttons" style="margin-top:22px;">
@@ -165,7 +163,7 @@
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT (no CTAs here) -->
 <section id="about" class="section alt">
   <div class="container split">
     <div>
@@ -173,9 +171,9 @@
       <h2>Meet Alexander</h2>
       <p class="sub">
         Alexander Guerra is a Bankers Life professional serving clients in Richmond, VA.
-        To connect, please request a consultation through the official Bankers Life website.
+        He helps individuals and families navigate the most important retirement planning decisions—
+        from healthcare and extended care to legacy and long-term financial strategy.
       </p>
-      </div>
     </div>
 
     <div class="card big">
@@ -194,15 +192,20 @@
         >
           Get directions
         </a>
+        <a class="btn btn-outline" href="tel:+18048973256">Call office</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-  <div class="container">
-    <p class="kicker">Contact</p>
-    <h2>Let’s connect</h2>
-    <p class="sub">Request a consultation or reach out directly.</p>
+  <div class="container contact">
+    <div class="section-head">
+      <p class="kicker">Contact</p>
+      <h2>Let’s connect</h2>
+      <p class="sub">Request a consultation or reach out directly.</p>
+    </div>
 
     <div class="buttons">
       <a
@@ -221,7 +224,9 @@
 <footer class="footer">
   <div class="container footer-inner">
     <p>© <span id="year"></span> Alexander Guerra</p>
-    <p class="fine">Bankers Life is the marketing brand of Bankers Life and Casualty Company.</p>
+    <p class="footer-links">
+      <a href="./privacy.html">Privacy Policy</a>
+    </p>
   </div>
 </footer>
 
