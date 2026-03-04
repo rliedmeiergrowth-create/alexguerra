@@ -8,6 +8,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-W26TD4MP');</script>
 <!-- End Google Tag Manager -->
+  <!-- Event snippet for Outbound click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17906955474/wMybCOu5v4IcENLp2dpC',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
     <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie/silktide-consent-manager.css">
 <script src="cookie/silktide-consent-manager.js"></script>
 <script>
